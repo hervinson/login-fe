@@ -14,8 +14,8 @@
           <br>
           <br>
             <div style="display: flex; justify-content: center">
-              <input type="button" value="Register" @click="register" style="margin-right: 20px"><br>
-              <input type="submit" value="Submit">
+              <input type="button" value="Register" @click="register" style="margin-right: 20px" class="button"><br>
+              <input type="submit" value="Submit" class="button">
             </div>
         </form>
         </div>
@@ -104,6 +104,19 @@ html {
   background-color: #F64E60;
   height: 250px;
   width: 250px;
+}
+
+.button {
+  cursor: pointer;
+  border: 1px solid #d3d3d3;
+  color: #fff;
+  background-color: transparent;
+  border-radius: 5px;
+  outline: none;
+}
+
+.button:hover {
+  color: #d3d3d3;
 }
 
 
