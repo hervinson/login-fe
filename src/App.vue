@@ -102,7 +102,7 @@ html {
   border-radius: 20px;
   padding: 20px;
   background-color: #F64E60;
-  height: 250px;
+  height: 200px;
   width: 250px;
 }
 
