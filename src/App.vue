@@ -79,6 +79,7 @@ html {
 }
 
 .body {
+  font-family: Poppins, Helvetica, "sans-serif";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -100,7 +101,7 @@ html {
 .form {
   border-radius: 20px;
   padding: 20px;
-  background-color: dodgerblue;
+  background-color: #F64E60;
   height: 250px;
   width: 250px;
 }
