@@ -1,22 +1,74 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="body">
+      <div class="container">
+        <div class="form">
+          <div style="margin-bottom: 10px">Test Login</div>
+          <form @submit.prevent="login">
+            <label for="username">Username: </label>
+            <input type="text" id="username" name="username" v-model="username" style="width: 150px">
+          <br>
+          <br>
+            <label for="password">Password: </label>
+            <input type="password" id="username" name="password" v-model="password" style="width: 150px">
+          <br>
+          <br>
+            <div style="display: flex; justify-content: center">
+              <input type="button" value="register" @click="register" style="margin-right: 20px"><br>
+              <input type="submit" value="Submit">
+            </div>
+        </form>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import axios from 'axios'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+  },
+
+  data () {
+    return {
+      username: '',
+      password: ''
+    }
+  },
+
+  methods: {
+
+    register () {
+      axios.post('http://localhost:3000/register',{username: this.username, password: this.password})
+      .then(response => {
+        alert(response.data)
+        console.log(response)
+      })
+    },
+
+    login () {
+      axios.post('http://localhost:3000/login',{username: this.username, password: this.password})
+      .then(response => {
+        alert(response.data)
+        console.log(response)
+      })
+    }
   }
 }
 </script>
 
 <style>
+html {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,4 +77,30 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.form {
+  /* background-color: dodgerblue; */
+  height: 250px;
+  width: 250px;
+}
+
+
 </style>
