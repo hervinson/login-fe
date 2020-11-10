@@ -3,7 +3,7 @@
     <div class="body">
       <div class="container">
         <div class="form">
-          <div style="margin-bottom: 10px">Test Login</div>
+          <div style="margin: 20px 0; font-size: 20px; font-weight: 600">Login Page</div>
           <form @submit.prevent="login">
             <label for="username">Username: </label>
             <input type="text" id="username" name="username" v-model="username" style="width: 150px">
@@ -14,7 +14,7 @@
           <br>
           <br>
             <div style="display: flex; justify-content: center">
-              <input type="button" value="register" @click="register" style="margin-right: 20px"><br>
+              <input type="button" value="Register" @click="register" style="margin-right: 20px"><br>
               <input type="submit" value="Submit">
             </div>
         </form>
@@ -94,10 +94,13 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+  height: 100%;
 }
 
 .form {
-  /* background-color: dodgerblue; */
+  border-radius: 20px;
+  padding: 20px;
+  background-color: dodgerblue;
   height: 250px;
   width: 250px;
 }
